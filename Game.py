@@ -30,6 +30,17 @@ class Snake:
         ]
         self.graphic_initialized = False
         self.failed = False
+    def reset(self):
+        self.snake = [[]]
+        self.create_snake()
+        self.direction = [0, 0]
+        self.last_updated_move = time.time()
+        self.last_updated_direction = time.time()
+        self.food = None
+        self.create_food()
+        self.eaten_for_now = False
+        self.graphic_initialized = False
+        self.failed = False
     def __init__for_render(self):
         pygame.init()
         surface=pygame.display.set_mode((self.WIDTH,self.HEIGHT),0,32)
@@ -176,4 +187,5 @@ class Snake:
         # -------------------------------------------------------------
         pygame.display.update()
         self.ft.tick(self.fps)
+
 
