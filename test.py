@@ -9,4 +9,4 @@ while True:
     action = snake.sample_action()
     snake.change_direction(action)
     if state==True:
-        break
+        snake.reset()
